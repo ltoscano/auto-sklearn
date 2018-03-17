@@ -396,7 +396,8 @@ class AutoSklearnClassifier(AutoSklearnEstimator):
         y : array of shape = [n_samples, n_classes] or [n_samples, n_labels]
             The predicted class probabilities.
         """
-        return self._automl.predict_proba(X)
+        return super(AutoSklearnClassifier, self).predict_proba(X)
+        #return self._automl.predict_proba(X)
 
 
 class AutoSklearnRegressor(AutoSklearnEstimator):
